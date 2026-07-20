@@ -254,7 +254,7 @@ open IsEta OrderType
 public theorem OrderType.type_le_type_of_isEta {α β : Type u} [LinearOrder α] [LinearOrder β]
     (h : IsEta #α β) : type α ≤ type β := by
   cases isEmpty_or_nonempty α with
-  | inl _ => exact type_le_type_iff.2 ⟨OrderEmbedding.ofIsEmpty⟩
+  | inl _ => exact type_le_type_iff.2 ⟨.ofIsEmpty⟩
   | inr _ =>
     obtain ⟨r, hr, hord⟩ := Cardinal.exists_ord_eq α
     obtain ⟨s, hs, -⟩ := Cardinal.exists_ord_eq β
